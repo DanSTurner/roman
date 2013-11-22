@@ -31,4 +31,20 @@ class RomanTest < MiniTest::Unit::TestCase
     assert_equal "X", 10.to_roman
   end
 
+  def test_40_returns_XL
+    assert_equal "XL", 40.to_roman
+  end
+
+  def test_50_returns_L
+    assert_equal "L", 50.to_roman
+  end
+
+  def test_60_returns_LX
+    assert_equal "LX", 60.to_roman
+  end
+
+  def test_90_returns_XC
+    assert_equal "XC", 90.to_roman
+  end
+
 end

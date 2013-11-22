@@ -37,6 +37,12 @@ class Fixnum
     case digit
     when 1..3
       "X" * digit
+    when 4
+      "XL"
+    when 5..8
+      "L" + "X" * (digit %5)
+    when 9
+      "XC"
     end
   end
 
