@@ -24,8 +24,8 @@ class Fixnum
       "I" * digit
     when 4
       "IV"
-    when 5
-      "V"
+    when 5..8
+      "V" + "I" * (digit %5)
     end
   end
 
