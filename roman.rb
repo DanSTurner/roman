@@ -3,7 +3,7 @@ class Fixnum
     numbers = to_arabic_array(self)
     roman_collect = Array.new
     numbers.each_with_index { |digit, index| roman_collect << romanize(digit, index) }
-    roman_collect.join
+    roman_collect.reverse.join
   end
 
   private
