@@ -55,4 +55,23 @@ class RomanTest < MiniTest::Unit::TestCase
     assert_equal "XCIX", 99.to_roman
   end
 
+  def test_100_returns_C
+    assert_equal "C", 100.to_roman
+  end
+
+  def test_444_returns_CDXLIV
+    assert_equal "CDXLIV", 444.to_roman
+  end
+
+  def test_444_returns_CDXLIV
+    assert_equal "CDXLIV", 444.to_roman
+  end
+
+  def test_14987_returns_MMMMMMMMMMMMMMCMLXXXVII
+    assert_equal "MMMMMMMMMMMMMMCMLXXXVII", 14987.to_roman
+  end
+
+  def test_55555
+    assert_equal "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMDLV", 55555.to_roman
+  end
 end

@@ -14,35 +14,26 @@ class Fixnum
   def romanize(digit, index)
     case index
     when 0
-      ones(digit)
+      unit(digit, "I", "V", "X")
     when 1
-      tens(digit)
+      unit(digit, "X", "L", "C")
+    when 2
+      unit(digit, "C", "D", "M")
+    else
+      "M" * digit * 10**(index -3)
     end
   end
 
-  def ones(digit)
+  def unit(digit, one, five, ten)
     case digit
     when 1..3
-      "I" * digit
+      one * digit
     when 4
-      "IV"
+      one + five
     when 5..8
-      "V" + "I" * (digit %5)
+      five + one * (digit %5)
     when 9
-      "IX"
-    end
-  end
-
-  def tens(digit)
-    case digit
-    when 1..3
-      "X" * digit
-    when 4
-      "XL"
-    when 5..8
-      "L" + "X" * (digit %5)
-    when 9
-      "XC"
+      one + ten
     end
   end
 
