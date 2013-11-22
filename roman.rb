@@ -1,6 +1,32 @@
 class Fixnum
   def to_roman
-    arabic_array = self.to_s.chars.map(&:to_i)
-    arabic_array.map { |digit| "I" * arabic_array[-1]%5 if arabic_array[-1] >= 1 }.join
+    numbers = to_arabic_array(self)
+    roman_collect = Array.new
+    numbers.each_with_index { |digit, index| roman_collect << romanize(digit, index) }
+    roman_collect.join
   end
+
+  private
+  def to_arabic_array(number)
+    number.to_s.chars.reverse.map(&:to_i)
+  end
+
+  def romanize(digit, index)
+    case index
+    when 0
+      ones(digit)
+    end
+  end
+
+  def ones(digit)
+    case digit
+    when 1..3
+      "I" * digit
+    when 4
+      "IV"
+    when 5
+      "V"
+    end
+  end
+
 end
