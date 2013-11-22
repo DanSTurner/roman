@@ -15,6 +15,8 @@ class Fixnum
     case index
     when 0
       ones(digit)
+    when 1
+      tens(digit)
     end
   end
 
@@ -28,6 +30,13 @@ class Fixnum
       "V" + "I" * (digit %5)
     when 9
       "IX"
+    end
+  end
+
+  def tens(digit)
+    case digit
+    when 1..3
+      "X" * digit
     end
   end
 
