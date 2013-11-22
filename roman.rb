@@ -26,6 +26,8 @@ class Fixnum
       "IV"
     when 5..8
       "V" + "I" * (digit %5)
+    when 9
+      "IX"
     end
   end
 

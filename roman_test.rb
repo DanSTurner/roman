@@ -23,4 +23,8 @@ class RomanTest < MiniTest::Unit::TestCase
     assert_equal "VI", 6.to_roman
   end
 
+  def test_9_returns_IX
+    assert_equal "IX", 9.to_roman
+  end
+
 end
